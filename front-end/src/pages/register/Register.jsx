@@ -1,10 +1,6 @@
 import Container from "../../components/Container"
-import { useState } from 'react'
 
 export const Register = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [name, setName] = useState("")
     return (
         <Container>
             <form className="login-form">
@@ -12,11 +8,6 @@ export const Register = () => {
               <span className="login-form-title">
                 <img src={birdImg} alt="" />
               </span>
-              <div className="wrap-input">
-                <input type="email" className={name !== "" ? 'input has-value' : 'input'} value={name} 
-                onChange={e => setName(e.target.value)}/>
-                <span className="focus-input" data-placeholder="Nome"></span>
-              </div>
              <div className="wrap-input">
                 <input type="email" className={email !== "" ? 'input has-value' : 'input'} value={email} 
                 onChange={e => setEmail(e.target.value)}/>
