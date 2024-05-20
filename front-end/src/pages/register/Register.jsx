@@ -1,6 +1,12 @@
 import Container from "../../components/Container"
+import { useState } from 'react'
+import birdImg from '../../assets/bird_2.jpg'
+import { Link } from 'react-router-dom'
 
 export const Register = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [name, setName] = useState("")
     return (
         <Container>
             <form className="login-form">
@@ -8,6 +14,11 @@ export const Register = () => {
               <span className="login-form-title">
                 <img src={birdImg} alt="" />
               </span>
+              <div className="wrap-input">
+                <input type="email" className={name !== "" ? 'input has-value' : 'input'} value={name} 
+                onChange={e => setName(e.target.value)}/>
+                <span className="focus-input" data-placeholder="Nome"></span>
+              </div>
              <div className="wrap-input">
                 <input type="email" className={email !== "" ? 'input has-value' : 'input'} value={email} 
                 onChange={e => setEmail(e.target.value)}/>
@@ -24,8 +35,8 @@ export const Register = () => {
                 </button>
               </div>
                 <div className="text-center">
-                  <span className="text1">Não possui conta?</span>
-                  <Link to="/register" className="text2">Criar Conta</Link>
+                  <span className="text1">Já possui conta?</span>
+                  <Link to="/login" className="text2">Entrar</Link>
                 </div>
             </form>
         </Container>
